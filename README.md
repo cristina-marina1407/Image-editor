@@ -1,7 +1,7 @@
 ## Postelnicu Cristina-Marina 313CA 2023-2024
 
-    Programul incepe prin definirea structurilor: RGB_MATRIX si IMAGE.
-    Structura IMAGE contine: magic_word, care reprezinta formatul imaginii,
+Programul incepe prin definirea structurilor: RGB_MATRIX si IMAGE.
+Structura IMAGE contine: magic_word, care reprezinta formatul imaginii,
 dimensiunile matricei, valorea maxima a pixelilor, o matrice de tip int pentru
 imaginile alb-negru si Grayscale si cea de a 2 a structura, RGB_MATRIX, pentru
 imaginile color, fiecare element al matricea rgb avand trei valori, cate una
@@ -18,7 +18,7 @@ aceasta fiind folosita in functia SELECT, unde este citita cu fgets intreaga
 linie a comenzii si coordonatele sunt obtinute cu functia strtok.
     Functiile care alcatuiesc programul sunt:
 ## LOAD, LOAD_ASCII SI LOAD_BINARY
-    Functia LOAD incepe prin eliberarea memoriei matricei imaginii anterioare.
+Functia LOAD incepe prin eliberarea memoriei matricei imaginii anterioare.
 Eliberarea se realizeaza daca variabila photo, care poate fi 0, atunci cand 
 nu este incarcata o imagine, si 1, atunci cand este incarcata o imagine. De
 asemenea, se verifica care dintre cele doua matrice exista, matrix sau rgb.
@@ -35,7 +35,7 @@ citeste din fisier folosind fscaf, iar pentru LOAD_BINARY se folosste fread
 pentru citirea matricei. Dupa incarcarea unui tip de imagine, variabila photo
 devinde 1. La finalul celor 2 functii se inchide fisierul.
 ## SELECT
-    Exista doua tipuri de selectie SELECT ALL si SELECT x1 y1 x2 y2. De aceea
+Exista doua tipuri de selectie SELECT ALL si SELECT x1 y1 x2 y2. De aceea
 se citeste cu fgets intreaga linie si se foloseste functia strtok pentru a
 separa cuvintele. Dupa prima utilizare a functiei strtok, se obtine variabila
 all, careia i se elimina new line ul. Daca in variabila all se afla cuvantul
@@ -49,13 +49,13 @@ y2 sunt puse in ordine crescatoare, cat si daca coordonatele sunt egale sau mai
 mari decat dimensiunile matricei sau sunt negative. Dupa ce coordonatele sunt
 transformate si verficate sunt puse in structura.
 ## EQUALIZE
-    Operatia EQUALIZE nu se realizeaza pentru imagini color, verificandu se
+Operatia EQUALIZE nu se realizeaza pentru imagini color, verificandu se
 daca magic_word este P3 sau P6 la inceput. Se calculeaza suprafata, inmultind
 dimensiunile matricei. Initializam elementele vectorului de frecventa cu 0,
 dupa care il construim pentru valorile fiecarui pixel. Parcurgem matricea si
 initializam cu 0 suma frecventelor pana la elementul dat, conform formulei.
 ## CROP, CROP_MATRIX, CROP_RGB
-    Functia CROP apeleaza functiile CROP_MATRIX si CROP_RGB in functie de
+Functia CROP apeleaza functiile CROP_MATRIX si CROP_RGB in functie de
 valoarea magic_word-ului. Functiile CROP_MATRIX si CROP_RGB aloca memorie
 pentru o matrice auxiliaza, aux_matrix pentru alb-negru si Grayscale sau
 aux_rgb pentru color. Se pun in auxiliara elemnetele selectate din matrice,
@@ -65,7 +65,7 @@ memorie pentru matricea din structura cu noile dimensiuni. Punem elementele din
 auxiliara in matricea din structura (matrix sau rgb), dupa care eliberam 
 memoria alocata pentru auxiliara.
 ## APPLY, APPLY_EDGE, APPLY_SHARPEN, APPLY_BLUR, APPLY_GAUSSIAN_BLUR
-    Citim toata linia cu fgets si folosim functia strtok pentru a obtine
+Citim toata linia cu fgets si folosim functia strtok pentru a obtine
 parametrul lui APPLY. Daca dupa Apply nu urmeaza nimic se considera comanda
 invalida, iar daca parametrul este diferit de operatiile existente, parametrul
 nu este valid. Operatia APPLY se foloseste pentru matricele color, deci trebuie
@@ -84,7 +84,7 @@ foloseste asupra lor functia CLAMP. Elementele obtinute in aux sunt puse apoi
 in matricea originala in selectie. La finalul functiilor se elibereaza memoria
 alocata pentru aux.
 ## SAVE, SAVE_ASCII, SAVE_BINARY
-    Citim toata linia cu fgets si folosim functia strtok pentru a obtine numele
+Citim toata linia cu fgets si folosim functia strtok pentru a obtine numele
 fisierului care trebuie deschis si tipul de salvare dorit. Daca dupa comanda
 SAVE si dupa numele fisierului urmeaza "ascii" se salveaza in format ascii si
 daca nu urmeaza nimic se salveaza binar. Dupa ce folisim prima data functia
@@ -95,6 +95,6 @@ magic_word. Daca imaginea este de tip binar si trebuie salvata in ascii,
 se schimba magic word ul. In cazul functiei SAVE_BINARY se intampla acelasi,
 dar se foloseste fwrite.
 ## EXIT
-    Functia EXIT elibereaza memoria alocata pentru matricea de tip int sau
+Functia EXIT elibereaza memoria alocata pentru matricea de tip int sau
 pentru matricea rgb.
 
