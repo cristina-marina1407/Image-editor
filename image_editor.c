@@ -1,4 +1,4 @@
-//Postelnicu Cristina-Marina 313CA 2023-2024
+//Copyright Postelnicu Cristina-Marina 313CA 2023-2024
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
