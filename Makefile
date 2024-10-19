@@ -1,31 +1,19 @@
-# Copyright 2023 Echipa PCLP1
+CC = gcc
+CFLAGS = -Wall -Wextra --std=c99
 
-#compiler setup
-CC=gcc
-CFLAGS=-Wall -Wextra -std=c99
+TARGET = sfl
 
-#define targets
-TARGETS = my_octave
-# Copyright 2023 Echipa PCLP1
+SRCS = image_editor.c helper.c functions.c
 
-# compiler setup
-CC=gcc
-CFLAGS=-Wall -Wextra --std=c99 
+OBJS = $(SRCS:.c=.o)
 
-# define targets
-TARGETS = image_editor
+all: $(TARGET)
 
-build: $(TARGETS)
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -lm -o $(TARGET)
 
-image_editor: image_editor.c
-	$(CC) $(CFLAGS) image_editor.c -lm -o image_editor
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm $(TARGETS)
-build: $(TARGETS)
-
-my_octave: my_octave.c
-	$(CC) $(CFLAGS) my_octave.c -o my_octave
-
-clean:
-	rm -f $(TARGETS)
+	rm -f $(OBJS) $(TARGET)
